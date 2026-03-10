@@ -5,7 +5,7 @@
 int main()
 {
     sf::RenderWindow window( sf::VideoMode( { 500, 500 } ), "Kwadrat" );
-    Renderer *renderer = new Renderer(&window); // pointer to created window
+    Renderer *renderer = new Renderer(&window);
 
     while ( window.isOpen() )
     {
@@ -14,7 +14,9 @@ int main()
             if ( event->is<sf::Event::Closed>() )
                 window.close();
         }
-
-        renderer->drawSquare(200.f, 100.f, sf::Color::White); // drawing square using drawSquare
+        window.clear();
+        renderer->drawSquare(200.f, 100.f, sf::Color::White);
+        window.display();
     }
+    delete renderer;
 }
