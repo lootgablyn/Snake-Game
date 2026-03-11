@@ -15,6 +15,8 @@ FetchContent_MakeAvailable(SFML)
 add_executable(snake main.cpp
         renderer.h
         renderer.cpp
+        Game.h
+        Game.cpp
 )
 target_compile_features(snake PRIVATE cxx_std_17)
 target_link_libraries(snake PRIVATE SFML::Graphics)
